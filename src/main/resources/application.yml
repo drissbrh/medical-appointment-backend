@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    username: postgres
+    password: nduiHJSD123365
+    url: jdbc:postgresql://localhost:5432/medical_appointment
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dilect: org.hibernate.dialect.PostgreSQLDialect
+        format-sql: true
+
