@@ -42,5 +42,7 @@ public class Doctor {
     @Enumerated(EnumType.STRING)
     @Column(name = "speciality")
     private Speciality speciality;
+    @Column(name = "isDoctor")
+    private Boolean isDoctor=true;
 
 }
