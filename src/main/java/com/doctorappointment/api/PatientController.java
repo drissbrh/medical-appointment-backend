@@ -4,6 +4,7 @@ import com.doctorappointment.model.Patient;
 import com.doctorappointment.service.PatientServiceImpl;
 import lombok.RequiredArgsConstructor;
 
+import org.hibernate.mapping.Any;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,7 +23,7 @@ public class PatientController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Patient> getPatientById(@PathVariable Long id){
+    public ResponseEntity<Patient> getPatientById(@PathVariable("id") Long id){
         return ResponseEntity.ok(patientService.getOnePatient(id));
     }
 
@@ -31,4 +32,8 @@ public class PatientController {
         return ResponseEntity.ok(patientService.registerAPatient(patient));
     }
 
+    @DeleteMapping("/{id}")
+    public void DeletePatient(@PathVariable("id") Long id){
+        ResponseEntity.ok().build();
+    }
 }
