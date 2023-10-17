@@ -15,7 +15,22 @@ public class DoctorServiceImpl implements DoctorService {
 
 
     @Override
+    public Doctor registerADoctor(Doctor doctor) {
+        return doctorRepository.save(doctor);
+    }
+
+    @Override
+    public Doctor loginDoctor(Doctor doctor) {
+        return null;
+    }
+
+    @Override
     public List<Doctor> getAllDoctors() {
         return doctorRepository.findAll();
+    }
+
+    @Override
+    public Doctor getOneDoctor(Long id) {
+        return doctorRepository.findById(id).orElseThrow(()->new RuntimeException(String.format("Cannot find doctor by Id %s,id")));
     }
 }
