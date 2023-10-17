@@ -13,3 +13,5 @@ spring:
         dilect: org.hibernate.dialect.PostgreSQLDialect
         format-sql: true
 
+server:
+  port: 5000
